@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  voxbox-api:
+    build: .
+    container_name: voxbox-api
+    ports:
+      - "8008:8008"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    restart: unless-stopped
